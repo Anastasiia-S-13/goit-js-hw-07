@@ -1,40 +1,31 @@
 const list = document.querySelector("#categories");
-const listItem = document.querySelector(".item")
+const listItem = document.querySelectorAll(".item")
 
-const listLength = list.querySelectorAll(".item");
-list.classList.add("big-list");
+const listLength = list.querySelectorAll(".item").length;
 
-function totalElements(params) {
-  let total = 0;
-
-    params.forEach(() => {
-      total += 1;
-  });
-
-  return total;
-}
-
-console.log(`Number of categories: ${totalElements(listLength)}`);
+console.log(listLength);
 
 function elementsInLists(items) {
   items.forEach((item) => {
-    item.classList.add("categories-items");
 
     const name = item.querySelector("h2");
-    name.classList.add("title");
     console.log(`Category: ${name.textContent}`);
 
     const listInside = item.querySelector("ul");
-    listInside.classList.add("list-items");
 
-    const itemsInside = listInside.querySelectorAll("li");
-    console.log(`Elements: ${totalElements(itemsInside)}`);
+    const itemsInside = listInside.querySelectorAll("li").length;
+    console.log(`Elements: ${itemsInside}`);
   })
   
 }
 
-elementsInLists(listLength);
+elementsInLists(listItem);
 
 
 
 
+
+// list.classList.add("big-list");
+//  item.classList.add("categories-items");
+//  name.classList.add("title");
+//  listInside.classList.add("list-items");
